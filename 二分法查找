@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+	int n=10,target,find=0,m;
+	int left=0,right=n;
+	int a[10]={0,1,2,3,4,5,6,7,8,9};
+	printf("输入要查找的x："); 
+	scanf("%d",&target);	
+	while(left<right)
+	{
+		m=(left+right)/2; 
+		if(a[m]<target)
+		left=m+1;
+		else if(a[m]>target)
+		right=m-1;
+		else
+		{
+			printf("下标j=%d",m);
+			find=1;
+			break;
+		}
+	}
+	if(find==0)printf("下标j=0\n");	 
+}
